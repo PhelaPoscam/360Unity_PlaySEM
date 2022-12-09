@@ -44,13 +44,6 @@ public class VideoUIController : MonoBehaviour {
 
      public void ToggleMulsemedia()
     {
-        if (audioSource.volume > 0.0f)
-        {
-            
-        }
-        else
-        {
-            
-        }
+        
     }
 }
