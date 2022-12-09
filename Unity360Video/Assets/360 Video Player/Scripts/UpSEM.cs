@@ -17,6 +17,7 @@ public class UpSEM : MonoBehaviour
         proc.StartInfo.WorkingDirectory = batDir;
         proc.StartInfo.FileName = "Start_SERenderer.bat";
         proc.StartInfo.CreateNoWindow = true;
+        proc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
         proc.Start();
         //proc.WaitForExit();
     }
@@ -29,6 +30,6 @@ public class UpSEM : MonoBehaviour
 
     void OnApplicationQuit()
     {
-        proc.Kill();
+        
     }
 }
