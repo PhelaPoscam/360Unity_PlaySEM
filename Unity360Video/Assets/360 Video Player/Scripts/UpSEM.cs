@@ -4,23 +4,31 @@ using UnityEngine;
 using System.Diagnostics;
 using UnityEditor;
 
+
+
 public class UpSEM : MonoBehaviour
 {
-
+    Process proc = null;
     // Start is called before the first frame update
     void Start()
     {
-        string path = "Assets/360 Video Player/SEMRenderer/PlaySEM_SERenderer_Aleph.jar";
-        Process semPROCESS = new Process();
-        semPROCESS.EnableRaisingEvents = false;
-        semPROCESS.StartInfo.FileName = "java.exe";
-        semPROCESS.StartInfo.Arguments = "-jar " + '"' + path;
-        semPROCESS.Start();
+        string batDir = "Assets/360 Video Player/SEMRenderer/";
+        proc = new Process();
+        proc.StartInfo.WorkingDirectory = batDir;
+        proc.StartInfo.FileName = "Start_SERenderer.bat";
+        proc.StartInfo.CreateNoWindow = true;
+        proc.Start();
+        //proc.WaitForExit();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void OnApplicationQuit()
+    {
+        proc.Kill();
     }
 }
