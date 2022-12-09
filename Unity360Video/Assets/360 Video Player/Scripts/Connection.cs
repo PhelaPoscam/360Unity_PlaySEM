@@ -39,7 +39,6 @@ public class Connection : MonoBehaviour
     string SEM_STOP = File.ReadAllText("Assets/360 Video Player/XML/SEM_STOP.txt");
     
     private WebSocket webSocketConn;
-    private BasicUPnP basicUPnP;
 
     IEnumerator startPlaySEM()
     {
@@ -70,6 +69,19 @@ public class Connection : MonoBehaviour
 
     }
 
+    void ativarSEM(){
+
+        metadata = SEM_PLAY;
+        //StartCoroutine("startPlaySEM");
+        webSocketConn.SendString("{\"setSem\":[{\"sensoryEffectMetadata\":\""+ metadata + "\", \"duration\":\"0\"}]}");
+    }
+
+    void desativarSEM(){
+        metadata = SEM_STOP;
+        //StartCoroutine("startPlaySEM");    
+        webSocketConn.SendString("{\"setSem\":[{\"sensoryEffectMetadata\":\""+ metadata + "\", \"duration\":\"0\"}]}");
+    }
+
     void sentMsg(){
         
     }
@@ -85,16 +97,12 @@ public class Connection : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            metadata = SEM_PLAY;
-            //StartCoroutine("startPlaySEM");
-            webSocketConn.SendString("{\"setSem\":[{\"sensoryEffectMetadata\":\""+ metadata + "\", \"duration\":\"0\"}]}");
+            ativarSEM();
         }
         if (Input.GetKeyDown(KeyCode.S)) 
         {
-            metadata = SEM_STOP;
-            //StartCoroutine("startPlaySEM");    
-            webSocketConn.SendString("{\"setSem\":[{\"sensoryEffectMetadata\":\""+ metadata + "\", \"duration\":\"0\"}]}");
-         }
+            desativarSEM();
+        }
     }
 }
 
