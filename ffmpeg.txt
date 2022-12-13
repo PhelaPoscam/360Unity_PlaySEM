@@ -1,0 +1,1 @@
+ffmpeg -i 360 VR Coaching - Simulation of a job interview-RaZl64yR7Oc.mp4 -vf "v360=eac:equirect" 360 VR Coaching - Simulation of a job interview-RaZl64yR7Oc_output.mp4
