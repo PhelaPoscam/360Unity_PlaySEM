@@ -47,12 +47,7 @@ public class VideoUIController : MonoBehaviour {
 
      public void ToggleMulsemedia()
     {
-        if (ativador == true){
-            con.ativarSEM();
-            ativador = false;
-        }
-        else con.desativarSEM();
-
         
+
     }
 }
