@@ -38,6 +38,9 @@ public class Connection : MonoBehaviour
     string SEM_3 = File.ReadAllText("Assets/360 Video Player/XML/SEM_3.txt");
     string SEM_PLAY = File.ReadAllText("Assets/360 Video Player/XML/SEM_PLAY.txt");
     string SEM_STOP = File.ReadAllText("Assets/360 Video Player/XML/SEM_STOP.txt");
+    string VENT_1 = File.ReadAllText("Assets/360 Video Player/XML/VENT_1.txt");
+    string VENT_2 = File.ReadAllText("Assets/360 Video Player/XML/VENT_2.txt");
+    string VENT_3 = File.ReadAllText("Assets/360 Video Player/XML/VENT_3.txt");
     
     private WebSocket webSocketConn;
 
@@ -45,7 +48,7 @@ public class Connection : MonoBehaviour
     {
         webSocketConn = new WebSocket(new Uri("ws://"+ playsemIpPortAddress + "/playsemserenderer"));
         yield return StartCoroutine(webSocketConn.Connect());
-        ativarSEM();
+        //ativarSEM(SEM_PLAY);
         //webSocketConn.SendString("{\"setSem\":[{\"sensoryEffectMetadata\":\""+ metadata + "\", \"duration\":\"0\"}]}");
 
         while (true)
@@ -71,7 +74,7 @@ public class Connection : MonoBehaviour
 
     }
 
-    public void ativarSEM(){
+    public void ativarSEM(string SEM_PLAY){
 
         metadata = SEM_PLAY;
         //StartCoroutine("startPlaySEM");
@@ -103,12 +106,24 @@ public class Connection : MonoBehaviour
         //TURN SEM ON
         if (Input.GetKeyDown(KeyCode.W))
         {
-            ativarSEM();
+            ativarSEM(SEM_PLAY);
         }
         //TURN SEM DOWN
         if (Input.GetKeyDown(KeyCode.S)) 
         {
             desativarSEM();
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            ativarSEM(VENT_1);
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            ativarSEM(VENT_2);
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            ativarSEM(VENT_3);
         }
     }
 
