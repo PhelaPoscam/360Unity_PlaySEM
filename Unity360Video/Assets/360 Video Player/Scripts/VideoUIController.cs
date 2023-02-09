@@ -9,14 +9,14 @@ public class VideoUIController : MonoBehaviour {
     public VideoPlayer playerToControl;
     private AudioSource audioSource;
     private float oldVolume = 1.0f;
-    bool ativador; 
-    Connection con = new Connection();
+    //bool ativador; 
+    //Connection con = new Connection();
 
     private void Start()
     {
         audioSource= playerToControl.gameObject.GetComponent<AudioSource>();
         oldVolume = audioSource.volume;
-        ativador = true;
+        //ativador = true;
     }
 
 
