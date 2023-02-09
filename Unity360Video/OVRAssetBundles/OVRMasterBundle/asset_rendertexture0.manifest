@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 2249696979
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 18e8e47755439f4cea5d9d2196373755
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 723d7b972e72461205a935bff5e6bf42
+HashAppended: 0
+ClassTypes:
+- Class: 84
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/360 Video Player/Rendering/360VideoRenderTexture.renderTexture
+Dependencies: []

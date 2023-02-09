@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 3649302813
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f4dd5b66ad5a10b9768733d66e8f0f0b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 7df655eef084a2837ec00f1f33b46ff3
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 84
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/360 Video Player/Rendering/360VideoSkybox.mat
+Dependencies:
+- C:/Unity/Unity360/Unity360Video-master/Unity360Video/OVRAssetBundles/OVRMasterBundle/asset_rendertexture0
+- C:/Unity/Unity360/Unity360Video-master/Unity360Video/OVRAssetBundles/OVRMasterBundle/asset_shader0

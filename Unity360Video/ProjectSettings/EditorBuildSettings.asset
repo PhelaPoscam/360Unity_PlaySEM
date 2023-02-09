@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/360 Video Player/Scenes/360VideoPlayer.unity
+    path: Assets/360 Video Player/Prefabs/360VideoPlayer.unity
     guid: cce1e97f4c9a6494f9e76047993083b1
-  - enabled: 1
-    path: Assets/Basic-UPnP/Sample/demo Basic-UPnP.unity
-    guid: 14899afef7ea13c44be0be38425f1631
-  m_configObjects: {}
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: db4b0dc577c533f4887b6071e6c18484,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9d76e1c666829d04eb55aadfd6955aef,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 6ef15897d838aa74f8883b3b0e4022eb,
+      type: 2}

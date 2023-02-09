@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using static Connection;
 
 public class VideoUIController : MonoBehaviour {
 
     public VideoPlayer playerToControl;
-
     private AudioSource audioSource;
     private float oldVolume = 1.0f;
+    bool ativador; 
+    Connection con = new Connection();
 
     private void Start()
     {
         audioSource= playerToControl.gameObject.GetComponent<AudioSource>();
         oldVolume = audioSource.volume;
+        ativador = true;
     }
 
 
@@ -44,13 +47,12 @@ public class VideoUIController : MonoBehaviour {
 
      public void ToggleMulsemedia()
     {
-        if (audioSource.volume > 0.0f)
-        {
-            
+        if (ativador == true){
+            con.ativarSEM();
+            ativador = false;
         }
-        else
-        {
-            
-        }
+        else con.desativarSEM();
+
+        
     }
 }

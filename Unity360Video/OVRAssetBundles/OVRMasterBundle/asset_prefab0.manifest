@@ -1,0 +1,46 @@
+ManifestFileVersion: 0
+CRC: 3707866124
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1e219f0e70e7437f0193f993cb5dacf9
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c1c7bbb9340e510fe596fc61ddb58f0c
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 45
+  Script: {instanceID: 0}
+- Class: 81
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 84
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 99d530496dfeb453d8254b61669d7474, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 34fa7331c3b969c499c6eebd833c1e29, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 124
+  Script: {instanceID: 0}
+- Class: 328
+  Script: {instanceID: 0}
+- Class: 329
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/360 Video Player/Prefabs/Main Camera.prefab
+Dependencies:
+- C:/Unity/Unity360/Unity360Video-master/Unity360Video/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- C:/Unity/Unity360/Unity360Video-master/Unity360Video/OVRAssetBundles/OVRMasterBundle/asset_mp40
+- C:/Unity/Unity360/Unity360Video-master/Unity360Video/OVRAssetBundles/OVRMasterBundle/asset_rendertexture0

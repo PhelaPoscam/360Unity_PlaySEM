@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 131785196
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1cbafc377db4a9a7fc85d6e1903c7399
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c12678a98877549a3fe7bb52917258ad
+HashAppended: 0
+ClassTypes:
+- Class: 329
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/360 Video Player/Videos/london.mp4
+- Assets/360 Video Player/Videos/Fireworks - 3/fireworksCorrected.mp4
+Dependencies: []

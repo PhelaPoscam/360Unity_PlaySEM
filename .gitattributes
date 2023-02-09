@@ -1,0 +1,4 @@
+*.psd filter=lfs diff=lfs merge=lfs -text
+Unity360Video/OVRAssetBundles/OVRMasterBundle/asset_mp40 filter=lfs diff=lfs merge=lfs -text
+Unity360Video/Assets/Oculus/LipSync/Plugins/iOS/libOVRLipSync.dylib filter=lfs diff=lfs merge=lfs -text
+Unity360Video/Assets/Oculus/LipSync/Plugins/MacOSX/OVRLipSync.bundle filter=lfs diff=lfs merge=lfs -text
