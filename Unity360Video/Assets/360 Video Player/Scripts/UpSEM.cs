@@ -18,7 +18,12 @@ public class UpSEM : MonoBehaviour
         proc.StartInfo.FileName = "Start_SERenderer.bat";
         proc.StartInfo.CreateNoWindow = true;
         proc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-        proc.Start();
+        try {
+        
+            proc.Start();
+        }catch (System.Exception e) {
+            UnityEngine.Debug.LogError("Run error" + e.ToString()); // or throw new Exception
+        }
         //proc.WaitForExit();
     }
 
