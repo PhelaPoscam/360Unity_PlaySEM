@@ -22,6 +22,17 @@ public class TimeStamp : MonoBehaviour
         {
             writer.WriteLine("Start date and time: " + currentDate.ToString());
         }
+
+         StartCoroutine(QuitAfterOneMinute());
+    }
+
+    IEnumerator QuitAfterOneMinute()
+    {
+        // Wait for 1 minute
+        yield return new WaitForSeconds(60);
+
+        // Quit the application
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 
     void OnApplicationQuit()
