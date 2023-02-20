@@ -123,7 +123,12 @@ public class Connection : MonoBehaviour
         {
             ativarSEM(VENT_3);
         }
+        if (Input.GetKey("escape"))
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
     }
+
 
     void OnApplicationQuit() {
         desativarSEM();
