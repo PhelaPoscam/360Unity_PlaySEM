@@ -2,18 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System;
 
 public class TimeStamp : MonoBehaviour
 {
-    private float startTime;
+    private string filePath;
+    private static bool hasQuit = false;
 
-    private void Start()
+    void Start()
     {
-        startTime = Time.time;
-        string filePath = Application.dataPath + "/PlayTimestamp.txt";
-        using (StreamWriter writer = new StreamWriter(filePath, true))
+        // Set the file path to the Application.persistentDataPath directory
+        filePath = Application.dataPath + "/DateTime.txt";
+
+        // Get the current date and time
+        DateTime currentDate = DateTime.Now;
+
+        // Write the start date and time to a text file
+        using (StreamWriter writer = new StreamWriter(filePath))
         {
-            writer.WriteLine("Play button was clicked at " + startTime + " seconds.");
+            writer.WriteLine("Start date and time: " + currentDate.ToString());
+        }
+    }
+
+    void OnApplicationQuit()
+    {
+        // Check if we have already written the quit date and time to the file
+        if (!hasQuit)
+        {
+            // Get the current date and time
+            DateTime currentDate = DateTime.Now;
+
+            // Append the quit date and time to the text file
+            using (StreamWriter writer = new StreamWriter(filePath, true))
+            {
+                writer.WriteLine("Quit date and time: " + currentDate.ToString());
+            }
+
+            // Indicate that we have already written the quit date and time to the file
+            hasQuit = true;
         }
     }
 }
