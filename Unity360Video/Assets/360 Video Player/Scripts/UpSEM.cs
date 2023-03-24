@@ -33,8 +33,4 @@ public class UpSEM : MonoBehaviour
         
     }
 
-    void OnApplicationQuit()
-    {
-        
-    }
 }

@@ -25,6 +25,8 @@ using UnityEditor;
 public class Connection : MonoBehaviour
 
 {
+    public VideoPlayer videoPlayer;
+    public AudioSource audioSource;
     public string playsemIpPortAddress;
     string metadata;
     
@@ -47,7 +49,7 @@ public class Connection : MonoBehaviour
     {
         webSocketConn = new WebSocket(new Uri("ws://"+ playsemIpPortAddress + "/playsemserenderer"));
         yield return StartCoroutine(webSocketConn.Connect());
-        ativarSEM(VENT_1);
+        //ativarSEM(VENT_1);
         //webSocketConn.SendString("{\"setSem\":[{\"sensoryEffectMetadata\":\""+ metadata + "\", \"duration\":\"0\"}]}");
 
         while (true)
@@ -76,14 +78,12 @@ public class Connection : MonoBehaviour
     public void ativarSEM(string SEM_PLAY){
 
         metadata = SEM_PLAY;
-        //StartCoroutine("startPlaySEM");
         webSocketConn.SendString("{\"setSem\":[{\"sensoryEffectMetadata\":\""+ metadata + "\", \"duration\":\"0\"}]}");
     }
 
     public void desativarSEM(){
 
-        metadata = SEM_STOP;
-        //StartCoroutine("startPlaySEM");    
+        metadata = SEM_STOP;  
         webSocketConn.SendString("{\"setSem\":[{\"sensoryEffectMetadata\":\""+ metadata + "\", \"duration\":\"0\"}]}");
     }
 
@@ -123,12 +123,17 @@ public class Connection : MonoBehaviour
         {
             ativarSEM(VENT_3);
         }
-        if (Input.GetKey("escape"))
+
+         if (Input.GetKey("escape"))
         {
             UnityEditor.EditorApplication.isPlaying = false;
         }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            videoPlayer.Play();
+            audioSource.Play();
+        }
     }
-
 
     void OnApplicationQuit() {
         desativarSEM();

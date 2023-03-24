@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System;
+using UnityEngine.Video;
 
 public class TimeStamp : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class TimeStamp : MonoBehaviour
 
     void Start()
     {
+        Screen.fullScreen = true;
+        
         // Set the file path to the Application.persistentDataPath directory
         filePath = Application.dataPath + "/DateTime.txt";
 
@@ -53,4 +56,10 @@ public class TimeStamp : MonoBehaviour
             hasQuit = true;
         }
     }
+
+    void Update(){
+        
+
+    }
+        
 }
