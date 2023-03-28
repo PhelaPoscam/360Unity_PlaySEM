@@ -27,6 +27,7 @@ public class Connection : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
     public AudioSource audioSource;
+    public bool activeOnStart = false;
     public string playsemIpPortAddress;
     string metadata;
     
@@ -49,7 +50,9 @@ public class Connection : MonoBehaviour
     {
         webSocketConn = new WebSocket(new Uri("ws://"+ playsemIpPortAddress + "/playsemserenderer"));
         yield return StartCoroutine(webSocketConn.Connect());
-        //ativarSEM(VENT_1);
+        if (activeOnStart == true){
+            ativarSEM(VENT_1);
+        }
         //webSocketConn.SendString("{\"setSem\":[{\"sensoryEffectMetadata\":\""+ metadata + "\", \"duration\":\"0\"}]}");
 
         while (true)
